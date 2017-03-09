@@ -45,6 +45,7 @@ class TimeLapse
 end
 
 is_exit = "exit"
+time_lapse = TimeLapse.new({start_time: 0, end_time: 0})
 loop do
   print "Input start-time: "
   start = gets.chomp
@@ -52,7 +53,8 @@ loop do
   print "Input end-time: "
   finish = gets.chomp
   break if finish == is_exit
-  time_lapse = TimeLapse.new({start_time: start.to_i, end_time: finish.to_i})
+  time_lapse.start_time = start.to_i
+  time_lapse.end_time = finish.to_i
   time_lapse.find_lapse
   puts
 end
